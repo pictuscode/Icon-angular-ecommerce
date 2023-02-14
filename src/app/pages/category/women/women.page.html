@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="dark" class="f-semibold ion-text-capitalize womenCatTitle">
+      {{title}} 
+    </ion-title>
+    <ion-icon name="search" slot="end" class="f-semibold ion-padding-end appbarIcons" routerLink="/search">
+    </ion-icon>
+    <ion-icon name="notifications" slot="end" class="f-semibold ion-padding-end appbarIcons" routerLink="/notification">
+    </ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="womenCategoryBase">
+
+  <!-- categoryslide -->
+  <ng-container *ngFor="let item of subCat; let i = index;">
+    <ion-list class="flex-d align-center catlist">
+      <ion-item lines="none" *ngFor="let dt1 of item;">
+        <ion-label>
+          <div>
+            <img src={{subCatDir+dt1.image}} class="categorySlideImg" (click)="(itemList(dt1._id,title))">
+            <ion-text>
+              <div class="ion-text-center">
+
+                <p class="c-black ion-text-capitalize">{{dt1.subcategoryName}} </p>
+              </div>
+            </ion-text>
+          </div>
+        </ion-label>
+
+      </ion-item>
+
+
+    </ion-list>
+  </ng-container>
+
+  <!-- banner -->
+  <app-banner-widget [isBannerSlide]="bannerSlide" [bannerName]="catBanners" [bannerDir]="catBannerDir"
+   >
+  </app-banner-widget>
+
+
+  <!-- bestofbeauty -->
+
+  <div class="ion-margin-top beautybase">
+    <div class="flex-d justify-between slidetitle">
+      <p class="c-black f-bold ion-text-uppercase ">best of beauty & personal care</p>
+
+    </div>
+    <ng-container *ngFor="let item of beautyOffers; let i = index;">
+      <ion-slides [options]="categoryopt" pager="false" class="beautyslidebase ">
+
+        <ion-slide class="beautyslides" *ngFor="let beauty of item;" >
+          <ion-card (click)="(itemList(beauty._id,title))"> 
+            <ion-card-content class="ion-no-padding">
+
+              <div class="beautytext ion-no-margin">
+                <h4 class="ion-no-margin f-bold c-black  ion-text-uppercase"
+                  *ngIf="beauty.offerType=='price' else discount">
+                  {{"Under "+ beauty.offerEndRange}}
+                </h4>
+                <ng-template #discount>
+
+                  <h4 class="ion-no-margin f-bold c-black  ion-text-uppercase">
+                    {{
+                    beauty.offerStartRange == 0 ? 'Upto '+ beauty.offerEndRange+"% off" :
+                    beauty.offerStartRange+"-"+beauty.offerEndRange+"% off"
+                    }}
+
+                  </h4>
+
+
+                </ng-template>
+                <h6 class="c-black  ion-text-capitalize">{{beauty.title}} </h6>
+              </div>
+
+              <img src={{beautyDir+beauty.image}} class="beautyimg">
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+      </ion-slides>
+    </ng-container>
+  </div>
+
+  <!-- addslider1 -->
+  <app-banner-widget [isAddBanner]="addBannerSlide" [bannerName]="addBanners" [bannerDir]="beautyDir"
+    [images]="firstAdd" ></app-banner-widget>
+
+  <!-- featureproducts -->
+  <div class="featureBase">
+    <div class="text-center  ">
+      <p class="c-black f-bold f-georgia ion-no-margin  ion-text-capitalize ion-text-center exploreTitle">
+        featured products
+      </p>
+
+    </div>
+    <ng-container *ngFor="let item of featurePdt">
+      <ion-row class="">
+
+        <ion-col size-xl="3" size-lg="3" size-md="3" size-sm="3" size-xs="3" class="flex-d justify-center"
+          *ngFor="let feature of item;">
+          <div>
+            <img src={{subCatDir+feature.image}} class="featureImg"  (click)="(itemList(feature._id,title))">
+
+            <div class="ion-text-center">
+
+              <p class=" ion-text-uppercase ion-no-margin">{{feature.subcategoryName}} </p>
+            </div>
+
+          </div>
+        </ion-col>
+
+
+
+      </ion-row>
+    </ng-container>
+
+  </div>
+
+  <!-- addslider2 -->
+  <app-banner-widget [isAddBanner]="addBannerSlide" [bannerName]="addBanners" [bannerDir]="beautyDir"
+    [images]="secondAdd"></app-banner-widget>
+
+  <!-- explore more -->
+  <div class="ion-margin-top">
+    <div class="text-center  ">
+      <p class="c-black f-bold f-georgia ion-no-margin  ion-text-capitalize ion-text-center exploreTitle">explore more
+      </p>
+
+    </div>
+    <ng-container *ngFor="let item of exploreMore">
+      <ion-slides [options]="expOpts" pager="false" class="exploreSlider">
+        <ion-slide class="" *ngFor="let explore of item;">
+          <div class="ion-text-center exploreSlides">
+            <img src={{beautyDir+explore.image}} class="exploreimg" (click)="(itemList(explore._id,title))">
+          </div>
+        </ion-slide>
+
+      </ion-slides>
+    </ng-container>
+  </div>
+
+</ion-content>

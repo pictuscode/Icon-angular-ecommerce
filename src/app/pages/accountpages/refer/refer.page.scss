@@ -1,0 +1,79 @@
+.referBase {
+    ion-grid {
+        padding: 10px 30px 10px;
+    }
+    .bannerBase {
+        .bannerImgBase {
+            background: url(../../../../assets/images/referBanner.jpg) no-repeat 49% 2%;
+            min-height: 250px;
+            position: relative;
+            .bannerCaption {
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                top: 45%;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                font-family: GeorgiaRegular !important;
+
+                h5 {
+                    font-size: 25px;
+                }
+                h6 {
+                    font-size: 18px;
+                }
+                p {
+                    font-size: 10px;
+                }
+            }
+        }
+        .referraltext {
+            font: 13px SpartanSemiBold;
+            line-height: 1.5;
+            color: #7c7e86;
+            margin-top: 25px;
+        }
+        .dark {
+            color: #000 !important;
+        }
+        .referralcodeBtn {
+            --border-style: dotted;
+            --border-color: red;
+            --border-width: 2px;
+            --background: none;
+            --color: #000;
+            --box-shadow: none;
+            --border-radius: 2px;
+            font: 13px SpartanSemiBold;
+            --padding-top: 20px;
+            --padding-bottom: 20px;
+            margin: 20px 0 0 0;
+        }
+        .inviteBtn {
+            margin: 40px 0 0 0;
+            font: 13px SpartanSemiBold !important;
+        }
+        .yourReferrals {
+            margin: 50px 0 20px 0;
+            font-size: 13px;
+        }
+    }
+    .yourReferralBase {
+        .noReferrImgBase {
+            background: #f4f7ff;
+            border-radius: 63px;
+            padding-top: 57px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+
+            .noReferralImg {
+                width: 170px;
+            }
+        }
+
+        h6 {
+            font-size: 13px;
+        }
+    }
+}

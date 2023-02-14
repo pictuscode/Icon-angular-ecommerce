@@ -1,0 +1,540 @@
+.productDetailsBase {
+    --background: #f5f5f2;
+    //common
+    .Title {
+        font-size: 13px;
+    }
+    .subTitle {
+        font-size: 12px;
+    }
+    p {
+        font-size: 12px;
+        color: #2f333f !important;
+    }
+
+    .offer {
+        margin-left: 5px;
+        color: #fe8e69 !important;
+    }
+    .star {
+        color: #14958f;
+        font-size: 10px;
+    }
+    .borderRight {
+        border-right: 1px solid #ccc;
+    }
+
+    //slider
+    .slider-pager-page {
+        color: #ccc !important;
+    }
+
+    .slider-pager-page.active {
+        color: #000 !important;
+    }
+
+    .productImagesBase {
+        position: relative;
+
+        //iconstop
+        .productOptTop {
+            position: absolute;
+            top: 2%;
+            z-index: 111111;
+        }
+
+        //iocnsbottom
+        .productOptBottom {
+            position: absolute;
+            bottom: 4%;
+            z-index: 111111;
+        }
+        .pdticons {
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            opacity: 0.9;
+            border-radius: 50%;
+            padding: 7px 5px 5px 5px;
+            margin-right: 10px;
+        }
+        .pdticons2 {
+            height: 36px;
+            width: 36px;
+            background: #fff;
+            opacity: 0.9;
+            border-radius: 50%;
+            padding: 7px 5px 5px 5px;
+            margin-right: 10px;
+        }
+        .pdticons3 {
+            height: 38px;
+            width: 38px;
+            background: #fff;
+            opacity: 0.9;
+            border-radius: 50%;
+        }
+        .button-inner{
+            width:86% !important;
+            height: 86% !important;
+        }
+        .button-native{
+            --padding-start:5px !important;
+            
+        }
+        .rating {
+            background: #fff;
+            opacity: 0.9;
+            border-radius: 32px;
+            padding: 5px 13px 2px 13px;
+
+            .views {
+                margin-left: 12px;
+            }
+            p {
+                font-size: 10px;
+                margin-bottom:0 !important;
+            }
+        }
+        .productImagesSlides {
+            //img
+            .productSlides {
+                .productImages {
+                    min-height: 555px;
+                }
+                .swiper-pagination {
+                    bottom: -4px !important;
+                }
+            }
+        }
+    }
+
+    //description
+    .productDescription {
+        padding: 20px 10px 0px 10px;
+        background: #fff;
+        p {
+            line-height: 24px;
+        }
+        .itemDescription {
+            font-size: 14px;
+        }
+        .itemRate {
+            font-size: 13px;
+            margin-top: 2px;
+
+            .strike {
+                font-weight: 100 !important;
+                text-decoration: line-through;
+                margin-right: 5px;
+                color: #70727a !important;
+            }
+        }
+        .tax {
+            color: #14958f !important;
+            font-size: 11px;
+        }
+    }
+
+    //buyfor
+    .buyFor {
+        padding: 0px 10px 0px 10px;
+        background: #fff;
+
+        h5 {
+            font-size: 12px;
+            margin-top:15px !important;
+        }
+        //copycode
+        .referralcodeBtn {
+            --border-style: dotted;
+            --border-color: red;
+            --border-width: 2px;
+            --background: #ffebf0;
+            --color: #000;
+            --box-shadow: none;
+            --border-radius: 2px;
+            font: 11px SpartanSemiBold;
+            --padding-top: 10px;
+            --padding-bottom: 7px;
+        }
+        .copytext {
+            margin: 35px 10px;
+            font-size: 11px;
+        }
+    }
+
+    //sizechart
+    .sizeChartBase {
+        padding: 0px 10px 5px 10px;
+        background: #fff;
+        .itemRate {
+            font-size: 11px;
+            margin-top: 2px;
+
+            .strike {
+                font-weight: 100 !important;
+                text-decoration: line-through;
+                margin-left: 5px;
+                color: #70727a !important;
+            }
+        }
+        .seller {
+            font-size: 11px;
+        }
+
+        p,
+        a {
+            font-size: 13px;
+        }
+        h5 {
+            font-size: 12px;
+        }
+        .sizeListBase {
+            .radio-button {
+                margin: 20px 0;
+                display: flex;
+            }
+            .radio-button input[type="radio"] {
+                display: none;
+            }
+            .radio-button label {
+                background-color: #fff;
+                border: 1.3px solid #000;
+                border-radius: 50%;
+                padding: 13px 6px;
+                width: 39px;
+                height: 39px;
+                font-size: 12px;
+                margin-right: 20px;
+                cursor: pointer;
+                text-align: center;
+                display: grid;
+                color: #000;
+            }
+            .radio-button input[type="radio"]:checked + label {
+                border: 1.5px solid var(--ionPrimaryTheme);
+                color: var(--ionPrimaryTheme);
+            }
+        }
+
+        .sizeList {
+            display: inline-flex;
+
+            .sizelabel {
+                width: 40px;
+                height: 40px;
+                border: 1px solid #2f313d;
+                border-radius: 50%;
+                padding: 11px 13px;
+                color: #2f313d;
+            }
+            .weekendCheck {
+                width: 40px;
+                padding: 5px;
+                height: 40px;
+                --border-radius: 52%;
+            }
+            .sizeRadio {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    //pdtbtns
+    .productbtnBase {
+        .wishBase {
+            padding-left: 0px;
+        }
+        .wishlistbtn {
+            background-color: #fff !important;
+            --box-shadow: none;
+            border: 1px solid #eaeaeb;
+
+            p {
+                font-size: 12px;
+                margin-top: 16px;
+            }
+        }
+        .addtobagbtn {
+            --box-shadow: none;
+            span {
+                align-items: baseline;
+            }
+            p {
+                font-size: 12px;
+                margin-top: 16px;
+                color: #fff !important;
+            }
+        }
+        .pdtbtnicons {
+            width: 18px;
+            margin-right: 10px;
+        }
+    }
+
+    //checkdelivery
+    .checkDeliveryBase {
+        padding: 0px 10px 5px 10px;
+        background: #fff;
+
+        h5 {
+            font-size: 13px;
+        }
+        .pinCode {
+            margin: 15px 0;
+            font-size: 13px;
+            border: 1px solid #d4d5d8;
+            border-radius: 3px;
+            ::placeholder {
+                color: #f0b;
+            }
+        }
+        .payText {
+            font-size: 11px;
+            margin: 20px 0;
+        }
+    }
+    //pdtDetails
+    .pdtDetails {
+        padding: 0px 10px 5px 10px;
+        background: #fff;
+        .pdtDetailsList {
+            display: block;
+            width: 100%;
+            ion-item {
+                display: inline-block;
+                width: 50%;
+                ion-label {
+                    margin: 0;
+                }
+            }
+            h6 {
+                font-size: 11px;
+            }
+            p {
+                font-size: 11px;
+            }
+        }
+        .designUl {
+            color: #3e4352;
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 3px;
+        }
+    }
+    //quality-check
+
+    .qualityCheck {
+        background: #fff;
+        padding: 9px 10px 0px 10px;
+        ion-col {
+            padding-bottom: 15px;
+        }
+        .qualityImg {
+            width: 40px;
+        }
+        .qualityImg2 {
+            width: 25px;
+        }
+        .qualityText {
+            font-size: 11px;
+            margin: 5px 0;
+            padding-bottom: 5px;
+        }
+    }
+
+    //exchnage
+    .exchange {
+        background: #fff;
+        padding: 9px 10px 2px 18px;
+        h6 {
+            font-size: 12px;
+        }
+        p {
+            line-height: 20px;
+        }
+    }
+
+    //review
+    .review {
+        background: #fff;
+        padding: 10px 18px;
+        h1 {
+            font-size: 34px;
+        }
+        h6 {
+            font-size: 13px;
+        }
+        .star {
+            font-size: 13px !important;
+        }
+        .borderRight {
+            padding: 0;
+            p {
+                font-size: 9px;
+            }
+        }
+        .progressList {
+            list-style: none;
+            ion-icon {
+                font-size: 9px;
+            }
+            .ratingProgess {
+                width: 65%;
+            }
+            li {
+                padding: 0px 10px;
+                p {
+                    font-size: 11px;
+                    margin: 8px 3px;
+                }
+                span {
+                    margin: 0px 3px 0px 1px;
+                }
+            }
+        }
+    }
+    //customersay
+    .customerSay {
+        h6 {
+            font-size: 14px !important;
+        }
+        .customerHead {
+            margin-top: 25px;
+            margin-bottom: 0;
+        }
+        .customerProgress {
+            width: 33%;
+        }
+        ul {
+            li {
+                padding-left: 0 !important;
+            }
+        }
+    }
+    //customer-review
+    .cusrev {
+        font-size: 13px;
+    }
+    .customerReviewBase {
+        .viewAll {
+            font-size: 12px;
+        }
+        ion-card {
+            box-shadow: none;
+            border-radius: 0;
+        }
+        .photoImg {
+            width: 201px;
+            height: 78px;
+            padding: 0px 10px 0 0;
+            object-fit: cover;
+        }
+    }
+    .customerReviews {
+        padding: 20px 0 20px 0;
+        h4 {
+            font-size: 10px;
+        }
+        .star {
+            font-size: 9px !important;
+            color: #fff !important;
+            margin-left: 2px;
+        }
+        .thumbs {
+            margin-right: 5px;
+            font-size: 15px;
+        }
+        .reviewrate {
+            background: #03a785;
+            max-height: 20px;
+            padding: 4px 4px 0px 4px;
+            margin-right: 10px;
+        }
+       
+    }
+    //trending
+    .trendingBase {
+        background-color: #fff;
+        padding-bottom: 15px;
+        h6 {
+            font-size: 12px;
+            line-height: 21px;
+        }
+        .trendingSlideBase {
+            .trendingSlides {
+                width: 157.667px !important;
+                padding-right: 9px;
+                display: flex;
+                justify-content: flex-start;
+                .itemsCard {
+                    box-shadow: none;
+                    border-radius: 0;
+                    border: 1px solid #ccc;
+                    max-height: 235px;
+                    width: 500px;
+                }
+                .itemImg {
+                    max-height: 150px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+                .itemDetails {
+                    margin: 0 10px 16px 10px;
+                    p {
+                        line-height: 20px;
+                    }
+                    .itemDescription {
+                        font-size: 10px;
+                    }
+                    .brandName {
+                        font-size: 11px;
+                        margin-top: 10px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .itemRate {
+                        font-size: 10px;
+                        margin-top: 2px;
+
+                        .strike {
+                            font-weight: 100 !important;
+                            text-decoration: line-through;
+                            margin-right: 5px;
+                            color: #70727a !important;
+                        }
+                        .offer {
+                            margin-left: 5px;
+                            color: #fe8e69;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .moreInfo {
+        background: #fff;
+        padding: 15px 20px;
+        h6 {
+            font-size: 12px;
+            margin-top: 0;
+        }
+        p,
+        a {
+            font-size: 11px;
+        }
+    }
+    .quote {
+        margin: 30px 0 40px 0;
+        i {
+            font-size: 12px;
+        }
+        p {
+            font-size: 9px;
+        }
+    }
+}
+

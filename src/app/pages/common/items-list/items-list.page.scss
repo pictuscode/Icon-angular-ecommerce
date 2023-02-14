@@ -1,0 +1,68 @@
+.itemsListBase {
+    .itemsInner {
+        padding: 0 2px 0 0;
+        .itemsCard {
+            box-shadow: none;
+            border-radius: 0;
+            position: relative;
+            .itemImg {
+                min-height: 307px;
+                object-fit: cover;
+            }
+        }
+    }
+    .cardLeft {
+        padding: 0 0px 0 0 !important;
+        border-right: 1px solid #eaecf0;
+    }
+    .rating {
+        position: absolute;
+        bottom: 6%;
+        left: 3%;
+        background: #fff;
+        opacity: 0.9;
+        border-radius: 32px;
+        padding: 4px 7px 0px 8px;
+        .star {
+            color: #14958f;
+            font-size: 8px;
+        }
+        .views {
+            margin-left: 12px;
+        }
+        p {
+            font-size: 8px;
+            margin-bottom:0 !important;
+        }
+    }
+    .itemDetails {
+        margin: 0 10px 20px 10px;
+        .itemDescription {
+            font-size: 10px;
+        }
+        .itemRate {
+            font-size: 10px;
+            margin-top: 2px;
+
+            .strike {
+                font-weight: 100 !important;
+                text-decoration: line-through;
+                margin-right: 5px;
+                color: #70727a !important;
+            }
+            .offer {
+                margin-left: 5px;
+                color: #fe8e69;
+            }
+        }
+        .detInner {
+            margin-bottom:12px;
+            .brandName {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+    .wishImg{
+        width:22px;
+    }
+}

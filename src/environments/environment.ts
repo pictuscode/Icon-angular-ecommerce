@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'http://192.168.0.121:5003/',
+  apiUrl: 'http://192.168.0.121:5003/api/'
+
+ /* images: 'http://image.tmdb.org/t/p', */
 };
 
 /*

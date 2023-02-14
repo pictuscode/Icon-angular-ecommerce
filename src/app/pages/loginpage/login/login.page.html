@@ -1,0 +1,66 @@
+
+<ion-content class="loginBase">
+  <div class="ion-text-center ">
+
+    <h4 class="ion-text-uppercase c-black f-bold ion-margin-top">Welcome</h4>
+
+    <p class="themeClr f-bold ion-no-margin">Buy product online</p>
+  </div>
+  <div class="ion-margin-top">
+    <ion-img src="../../../../assets/images/login/loginImg.jpg">
+
+    </ion-img>
+  </div>
+
+  <ion-grid>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+      <ion-row class="d-block">
+        <div class="loginForm">
+          <h6 class="c-black f-bold ion-padding-top">Login <span class="f-regular">or</span> Signup</h6>
+          <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="12" size-xs="12">
+            <div class="loginInputBase flex-d align-center">
+              <span class="countryCode c-black f-semibold">+91</span>
+              <ion-input maxlength="10" minlength='10' placeholder="Mobile Number*" class="loginInput  c-black"
+                type="text" formControlName="mobile"   [(ngModel)]="postData.phone" [readonly]="isReadonly()" required>
+              </ion-input>
+            </div>
+
+            <!-- Error messages -->
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+              Mobile number is required.
+            </span>
+            <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+              please enter a valid mobile number
+            </span>
+
+            <p class="c-black agreeText f-bold">
+              By continuing, I agree to the
+              <span class="themeClr f-bold">
+                Terms of use
+              </span>
+              &
+              <span class="themeClr f-bold">privacy Policy</span>
+            </p>
+
+            <ion-button  expand="full" class="ion-text-uppercase f-bold  continueBtn"
+              color="secondarythemecolor" type="submit">
+              continue
+            </ion-button>
+
+            <p class="c-black agreeText f-bold">
+              Having truble logging in ?
+              <span>
+                <a routerLink="#" class="themeClr f-bold gethelp">Get help</a>
+              </span>
+
+            </p>
+          </ion-col>
+        </div>
+      </ion-row>
+
+    </form>
+ 
+  </ion-grid>
+
+</ion-content>

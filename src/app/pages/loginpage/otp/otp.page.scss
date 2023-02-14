@@ -1,0 +1,24 @@
+.otpBase {
+    .agreeText {
+        margin-top: 30px;
+    }
+    .otp-input {
+        width: 40px;
+        font-size: 12px;
+        height: 54px !important;
+        border-radius: 3px !important;
+    }
+    .ng-otp-input-wrapper[_ngcontent-itu-c162] .otp-input[_ngcontent-itu-c162]:not(:last-child) {
+        margin-right: 21px !important;
+    }
+    ng-otp-input {
+        input{
+
+            margin-right: 21px !important;
+        }
+    }
+}
+
+.fontClass{
+    font-size: 12px !important;
+}

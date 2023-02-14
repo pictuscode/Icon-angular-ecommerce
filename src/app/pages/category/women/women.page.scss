@@ -1,0 +1,155 @@
+.womenCatTitle {
+    font-size: 16px;
+}
+.womenCategoryBase {
+    //catgory
+    .catlist {
+        flex-wrap: wrap;
+        ion-item {
+            width: 20%;
+        }
+    }
+   
+    ion-card {
+        box-shadow: none;
+    }
+
+    .catBase {
+        width: 64px;
+    }
+    .catTitle {
+        p {
+            margin: 2px 0;
+        }
+    }
+    .categorySlideImg {
+       
+        width: 50px;
+        height: 50px;
+        display: list-item;
+        border-radius: 50%;
+        object-fit: cover;
+        img {
+            --border-radius: 50%;
+        }
+    }
+    p {
+        font-size: 9px;
+    }
+    //beauty
+    .beautybase {
+        padding: 0px 5px;
+
+        .beautyslidebase {
+            ion-card {
+                border-radius: 0;
+                margin: 9px 0px 0 9px;
+            }
+            ion-card-content {
+                background: #fbe4b2;
+                padding: 14px 15px 10px 15px;
+                border: 1px solid #e8d2a6;
+            }
+            .beautytext {
+                min-height: 43px;
+
+                h4 {
+                    font-size: 16px;
+                }
+                h6 {
+                    font-size: 10px;
+                }
+            }
+            .beautyimg {
+                min-height: 223px;
+                object-fit: cover;
+            }
+        }
+    }
+    //addslider
+    .addSliderBase {
+      
+        max-height: 130px;
+        
+    }
+    //common
+    .slidetitle {
+        p {
+            font-size: 14px;
+            margin: 0px 10px;
+        }
+    }
+    //bestbrand
+    .bestbrandbase {
+        padding: 0px 5px;
+        .bestbrandimg {
+            max-height: 150px;
+            position: relative;
+        }
+        .brandlogo {
+            position: absolute;
+            bottom: -9px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        .logobrand {
+            width: 90%;
+            border-radius: 6px;
+            max-height: 49px;
+            object-fit: fill;
+        }
+    }
+    //exploremore
+    .exploreTitle {
+        font-size: 25px;
+        margin: 13px 0;
+    }
+    .exploreSlides {
+        background: url(../../../../assets/images/womenCategory/mostLoved/bg.jpg) no-repeat 42% 47%;
+
+        .exploreimg {
+            padding: 20px 20px 10px 20px;
+        }
+    }
+    //mostlovedbrand
+    .mostlovedBase {
+        ion-card {
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .lovedbrandbase {
+            background-color: #3f7556;
+        }
+        .lovedImg {
+            background: url(../../../../assets/images/womenCategory/mostLoved/bg.jpg) no-repeat 42% 47%;
+            padding: 8px;
+        }
+        .lovedText {
+            font-size: 13px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    //featureimg
+    .featureBase {
+        .featureImg {
+            width: 73px;
+            height: 73px;
+            display: list-item;
+            border-radius: 50%;
+            object-fit: cover;
+            background: url(../../../../assets/images/womenCategory/featuredBrands/bg.svg) no-repeat 40% 46%;
+            padding: 5px;
+        }
+        P {
+            color: #b80c06;
+            font-weight: 600;
+            font-size: 10px;
+            margin-top: 5px;
+        }
+    }
+}

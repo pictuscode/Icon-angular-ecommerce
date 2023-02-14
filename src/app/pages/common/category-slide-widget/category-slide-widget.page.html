@@ -1,0 +1,64 @@
+<!-- categoryslide -->
+
+<div class="hero-list" *ngIf="isCategorySlide else featuredSlide">
+  <div class="ion-margin-top">
+    <div class="flex-d justify-between catTitle">
+      <p class="c-black f-bold ion-no-margin ion-text-uppercase">Categories</p>
+
+    </div>
+  </div>
+
+  <ion-slides [options]="categoryopt" pager="false" class="categorySlideBase ">
+    <ng-container *ngFor="let item of categories; let i = index;">
+      <ion-slide class="categorySlides" routerLink="/women" *ngFor="let dt of item;">
+        <ion-card>
+          <ion-card-content class="ion-no-padding">
+            <img src={{groupDir+dt.image}} class="categoryImg">
+            <div class="cardText ion-no-margin">
+              <h4 class="ion-no-margin f-bold f-georgia c-black ion-text-capitalize">{{dt.title}}</h4>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ng-container>
+  </ion-slides>
+</div>
+
+<!-- budgetBuy -->
+<ng-template #featuredSlide>
+  <div *ngIf="isfeaturedSlide else bestofBrands" class="dynamicSlide">
+    <ng-container *ngFor="let item of dynamicBlock; let i = index;">
+      <div *ngFor="let dt1 of item; ">
+        <div class="ion-margin-top">
+          <div class="flex-d justify-between catTitle">
+            <img src={{dynamicBlockDir+dt1.image}} class="categoryImg titleimg">
+          </div>
+        </div>
+        <div *ngIf="dt1.cardType else meow">
+          <ion-slides [options]="categoryopt" pager="false" class="categorySlideBase ">
+            <ion-slide class="categorySlides" routerLink="/women" *ngFor="let dynamic of dt1.item;">
+              <ion-card>
+                <ion-card-content class="ion-no-padding">
+                  <img src={{dynamicBlockDir+dynamic.image}} class="categoryImg">
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <ng-template #meow>
+          <ion-row class="toppicks">
+            <ion-col size-xl="6" size-lg="6" size-md="6" size-sm="6" size-xs="6" class=""
+              *ngFor="let dynamic of dt1.item;">
+              <ion-card class="topcardbg">
+                <ion-card-content class="ion-no-padding">
+                  <img src={{dynamicBlockDir+dynamic.image}} class="categoryImg">
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ng-template>
+      </div>
+    </ng-container>
+  </div>
+</ng-template>
+

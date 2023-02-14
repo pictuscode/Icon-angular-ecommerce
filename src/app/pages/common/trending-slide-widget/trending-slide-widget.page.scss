@@ -1,0 +1,87 @@
+ //trending
+ .trendingBase {
+    background-color: #fff;
+    padding-bottom: 15px;
+
+    .trendingSlideBase {
+        .trendingSlides {
+            width: 157.667px !important;
+            padding-right: 9px;
+            display: flex;
+            justify-content: flex-start;
+            .itemsCard {
+                box-shadow: none;
+                border-radius: 0;
+                border: 1px solid #ccc;
+                max-height: 235px;
+                width: 500px;
+            }
+            .itemImg {
+                max-height: 150px;
+                width: 100%;
+                object-fit: cover;
+            }
+            .itemDetails {
+                margin: 0 10px 16px 10px;
+                p {
+                    line-height: 20px;
+                }
+                .itemDescription {
+                    font-size: 10px;
+                }
+                .brandName {
+                    font-size: 11px;
+                    margin-top: 10px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .itemRate {
+                    font-size: 10px;
+                    margin-top: 2px;
+
+                    .strike {
+                        font-weight: 100 !important;
+                        text-decoration: line-through;
+                        margin-right: 5px;
+                        color: #70727a !important;
+                    }
+                    .offer {
+                        margin-left: 5px;
+                        color: #fe8e69;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ //browsing
+ .browsingBase {
+    background: #fff;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    .browsingSlides {
+        width: 208.667px !important;
+    }
+    .itemDetails {
+        margin: 10px 0px;
+    }
+    .itemsCard {
+        box-shadow: none;
+        border-radius: 0;
+        border: 1px solid #ccc;
+    }
+    .brandName {
+        color: #3f4253;
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+    .catname {
+        font-size: 11px;
+        margin-top: 0;
+    }
+    .itemImg {
+        max-height: 275px;
+    }
+}

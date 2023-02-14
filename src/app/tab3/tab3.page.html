@@ -1,17 +1,248 @@
-<ion-header [translucent]="true">
+<ion-header class="cartHeader">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+    <div class="flex-d">
+      <ion-title color="dark" class="f-bold ion-text-uppercase ion-no-padding cartTitle">
+        shopping bag
+
+      </ion-title>
+      <img src="../../assets/images/itemsPics/heart.png" width="23px" class="ion-margin-end" (click)="(navigateWishList())"
+       >
+
+    </div>
+
   </ion-toolbar>
 </ion-header>
+<ion-content [fullscreen]="true" class="cartBase">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- filledBag -->
+  <ion-grid>
+    <div class="filledBagBase">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+      <div class="deliverAddress flex-d justify-between align-center ion-padding ion-margin-top">
+        <div>
+          <h6 class="ion-no-margin c-black ">Deliver to: <span class="f-semibold c-black">SivaKumar, 632513</span> </h6>
+          <p class="ion-no-margin c-black">2/175,Tank street,V.C.Mottur,Walajapet,Ranipet</p>
+
+        </div>
+        <div>
+          <a href="/cart" class="themeClr f-bold ion-text-uppercase gethelp">Change</a>
+        </div>
+      </div>
+
+      <div class="availableOffers ion-padding ion-margin-top">
+        <div>
+          <div class="ion-no-margin f-semibold c-black flex-d align-center">
+            <ion-img src="../../assets/images/cart/offericon.png" class="offerImg"></ion-img>
+            <h6 class="ion-no-margin"> Available Offers </h6>
+          </div>
+
+
+          <ul class="ion-no-padding">
+            <li>
+              <p class="ion-no-margin c-black">10% Instant Discount on Bank of Broda Credit Cards on a min speed of
+                Rs.3,000.TCA
+              </p>
+            </li>
+            <li>
+              <p class="ion-no-margin c-black">10% Instant Discount on Bank of Broda Credit Cards on a min speed of
+                Rs.3,000.TCA
+              </p>
+            </li>
+          </ul>
+
+
+        </div>
+
+      </div>
+
+      <div class="availableOffers ion-padding ion-margin-top">
+        <div>
+          <div class="ion-no-margin c-black flex-d align-center">
+            <ion-img src="../../assets/images/cart/shipping.png" class="feeImg"></ion-img>
+            <h5 class="ion-no-margin mb-0"> Yay! <span class="f-semibold ">No convenience fee</span> on this order</h5>
+          </div>
+
+
+        </div>
+
+      </div>
+
+     
+
+      <!-- looping bag items -->
+      <div class="cartItems">
+        <ion-list class="ion-no-padding">
+          <div class="flex-d ">
+            <ion-list class="ion-no-padding" *ngFor="let list of bagListArr">
+
+              <ion-item lines="none" class="ion-margin-top" *ngFor="let items of list.bagList.bag">
+
+                <div class="flex-d cartItemsBase">
+
+                  <div>
+
+                    <input type="checkbox" id={{items._id}} class='d-none' />
+                    <label for={{items._id}}>
+                      <img src={{pdtDir+items.productId.productImage[0]}} class="cartItemImg">
+                    </label>
+
+                  </div>
+                  <div class="ion-margin-left">
+                    <div class="flex-d justify-between">
+                      <h3 class="f-bold c-black ion-no-margin">{{items.productId.productTitle}}</h3>
+
+                    </div>
+                    <h6 class="c-black">{{items.productId.productName}}</h6>
+                    <p>Sold by:{{items.sellerId.sellerName}}</p>
+
+                    <div class=" flex-d align-center innerdiv">
+                      <ion-icon name="eye" color="secondarythemecolor"></ion-icon>
+                      <p class="f-bold c-black">495</p>
+                      <h4 class="ion-no-margin">People viewing now</h4>
+                    </div>
+
+
+                    <div class=" flex-d align-center innerdiv">
+                      <!-- size chnage btn -->
+                     <ion-button class="BaggedSize f-bold c-black ion-text-capitalize"
+                        >Size: {{items.sizeId.title}}
+                      </ion-button>
+
+                   
+
+
+
+                      <ion-button class="BaggedSize f-bold c-black ion-text-capitalize">Qty: {{items.quantity}}
+                      </ion-button>
+                    </div>
+
+                    <div class=" flex-d align-center innerdiv">
+                      <p class="f-bold c-black">{{items.productId.price}}</p>
+                      <p class="oldprice">{{items.productId.mrpPrice}}</p>
+                      <p class=" off ">{{items.productId.discount}}% off</p>
+                    </div>
+
+                    <div class="flex-d align-center innerdiv">
+                      <ion-icon name="checkmark-outline" color="progress"></ion-icon>
+                      <p class="ion-no-margin c-black">Deliver by <span class="f-bold c-black">15 Sep 2022</span> </p>
+                    </div>
+
+                  </div>
+                </div>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-list>
+      </div>
+
+
+     
+
+
+      <div class="alsoLike">
+        <div class="viewtab ion-margin-top ion-margin-bottom">
+          <p class="f-bold c-black flex-d align-center mb-0">
+            <span class="">
+              <ion-img src="../../assets/images/itemsPics/shopping-bag.png"></ion-img>
+            </span>
+            You may also like:
+          </p>
+          <ion-list class="viewList ion-no-padding">
+            <ion-item lines="none" class="inon-no-padding">
+              <ion-label class="ion-text-uppercase f-bold c-black mb-0">lipstick</ion-label>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label class="ion-text-uppercase f-bold  c-black mb-0">belt</ion-label>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label class="ion-text-uppercase f-bold c-black mb-0">mascara</ion-label>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label class="ion-text-uppercase f-bold c-black mb-0">flip flops </ion-label>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label class="ion-text-uppercase f-bold c-black mb-0">scarves</ion-label>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label class="ion-text-uppercase f-bold c-black mb-0">gloves </ion-label>
+            </ion-item>
+          </ion-list>
+
+    
+
+        </div>
+
+
+      </div>
+
+      <div class="priceDetails ion-margin-top">
+        <h6 class="f-bold c-black ion-padding-top ion-padding-start ion-text-uppercase">price details(2 Items) </h6>
+        <ul class="ion-padding-start ion-padding-end">
+          <li class="flex-d justify-between align-center">
+            <p class="c-black">Total MRP</p>
+            <p class="c-black">3,189</p>
+          </li>
+          <li class="flex-d justify-between align-center">
+            <p class="c-black">Discount on MRP</p>
+            <ion-text color="progress">-3,189</ion-text>
+
+          </li>
+          <li class="flex-d justify-between align-center">
+            <p class="c-black">Convenience Fee</p>
+            <ion-text class=" ion-text-uppercase" color="progress"> <span
+                class="ion-text-uppercase strike ion-text-lowercase c-black">99</span>free</ion-text>
+
+          </li>
+          <li class="flex-d justify-between align-center ion-margin-top totalAmount">
+            <p class="c-black f-bold">Total Amount</p>
+            <p class=" c-black f-bold">1733 </p>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="flex-d cartFooter ion-margin-top">
+        <div class="ion-text-center">
+          <div class="flex-d justify-center">
+
+            <ion-img src="../../assets/images/cart/original.png"></ion-img>
+          </div>
+
+          <p>Genuine Products</p>
+        </div>
+        <div class="ion-text-center">
+          <div class="flex-d justify-center">
+            <ion-img src="../../assets/images/cart/delivery.png"></ion-img>
+          </div>
+          <p>Contactless Delivery</p>
+        </div>
+        <div class="ion-text-center">
+          <div class="flex-d justify-center">
+            <ion-img src="../../assets/images/cart/securePayments.png" class="secure"></ion-img>
+          </div>
+          <p>Secure Payments</p>
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </ion-grid>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="placeOrderBase">
+
+      <ion-button expand="block" color="secondarythemecolor" class="ion-text-uppercase saveBtn f-semibold"
+        routerLink="/address">
+        place order
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

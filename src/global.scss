@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,220 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+//variable
+:root {
+    --ionPrimaryTheme: #ff406c;
+    --ionTextLight: #fff;
+    --ionSecondaryTheme: #1d80bb;
+    --ion-toolbar-background: #fff;
+    --color-selected: var(--ion-tab-bar-color-selected, var(--ionPrimaryTheme));
+    --box-shadow: none !important;
+    --secondaryBtnBg: transparent;
+}
+
+//common
+* {
+    --ion-font-family: SpartanRegular !important;
+    --color: #70727a;
+}
+.error {
+    color: red;
+    font-size: 9px;
+}
+.themeBg {
+    background-color: var(--ionPrimaryTheme);
+}
+.lightText {
+    color: var(--ionTextLight) !important;
+}
+.f-bold {
+    font-family: SpartanBold !important;
+}
+.f-semibold {
+    font-family: SpartanSemiBold !important;
+}
+.f-medium {
+    font-family: SpartanMedium !important;
+}
+.f-regular {
+    font-family: SpartanRegular !important;
+}
+.f-georgia {
+    font-family: GeorgiaRegular !important;
+}
+.f-bolder {
+    font-family: SpartanExtraBold !important;
+}
+.themeClr {
+    color: var(--ionPrimaryTheme) !important;
+}
+.w-100 {
+    width: 100%;
+}
+.c-black {
+    color: #000 !important;
+}
+.d-none {
+    display: none !important;
+}
+.d-block {
+    display: block;
+}
+.header-md::after {
+    background: none;
+}
+.primaryTextClr {
+    color: var(--ionPrimaryTheme) !important ;
+}
+.secondaryTextClr {
+    color: var(--ionSecondaryTheme) !important ;
+}
+.gethelp {
+    text-decoration: none;
+}
+.primaryBtn {
+    --padding-top: 28px;
+    --padding-bottom: 28px;
+    --background: var(--ionSecondaryTheme) !important ;
+    --color: var(ionTextLight) !important;
+    --box-shadow: none;
+}
+.secondaryBtn {
+    --padding-top: 25px;
+    --padding-bottom: 25px;
+    --background: var(--ionTextLight);
+    --color: #3e90c3;
+    --border-color: #84b8d9;
+    --border-radius: 10px;
+}
+.acntBar {
+    box-shadow: none !important;
+}
+.appbarIcons {
+    font-size: 20px;
+}
+.strike {
+    text-decoration: line-through;
+}
+.resetPasswordBase {
+    --padding-start: 30px;
+    --padding-end: 30px;
+    --padding-top: 10px;
+    h5 {
+        font-size: 18px;
+    }
+    p {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+    .loginInput {
+        border: 1px solid #a9a9a9;
+        border: 1px solid #a9a9a9;
+        --padding-top: 15px;
+        --padding-bottom: 12px;
+        --padding-start: 18px;
+        --padding-end: 10px;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+    .continueBtn {
+        margin-top: 26px;
+        --box-shadow: none;
+        font-size: 12px;
+    }
+
+    h6 {
+        font-size: 12px;
+        margin-top: 50px;
+    }
+}
+//button
+.loginBtn {
+    margin-top: 15px;
+    --padding-start: 10px;
+    --padding-end: 8px;
+    --padding-top: 23px;
+    --padding-bottom: 20px;
+    font: 11px SpartanSemiBold !important;
+    --box-shadow: none;
+    --border-radius: 2px;
+}
+.logoutBtn {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    margin-top: 30px;
+    --color: #ed8181;
+    --border-color: #ed8181;
+    --border-radius: 2px;
+    margin-bottom: 50px;
+    --border-width: 1.5px;
+    font-size: 12px;
+}
+
+//flex
+.flex-d {
+    display: flex !important;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.justify-start {
+    justify-content: flex-start;
+}
+.justify-end {
+    justify-content: flex-end;
+}
+.align-center {
+    align-items: center;
+}
+
+//padding-0
+.pt-0 {
+    padding-top: 0 !important;
+}
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+.pe-0 {
+    padding-right: 0 !important;
+}
+.ps-0 {
+    padding-left: 0 !important;
+}
+
+//margin-0
+.mt-0 {
+    margin-top: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.me-0 {
+    margin-right: 0 !important;
+}
+.ms-0 {
+    margin-left: 0 !important;
+}
+
+//bannerslide
+.bannerSliderBase {
+    max-height: 275px;
+    .bannerSlides {
+        max-height: 422px;
+        .bannerSlideImg {
+            position: relative;
+        }
+    }
+}
+.change-address-shipping-modal {
+    --height: 17%;
+    align-items: flex-end;
+}
+.openHg {
+    --height: 24%;
+    align-items: flex-end;
+}

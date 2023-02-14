@@ -1,3 +1,4 @@
+import { TrendingSlideWidgetPage } from './../pages/common/trending-slide-widget/trending-slide-widget.page';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,6 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
-  declarations: [Tab2Page]
+  declarations: [Tab2Page,TrendingSlideWidgetPage]
 })
 export class Tab2PageModule {}

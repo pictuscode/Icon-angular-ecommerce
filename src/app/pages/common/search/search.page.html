@@ -1,0 +1,661 @@
+<ion-header class="searchPdtHead">
+  <ion-toolbar>
+    <div class="flex-d align-center justify-between">
+      <div class="flex-d">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-input placeholder="Search for brands & products" class="searchPdtInput"></ion-input>
+
+      </div>
+       </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="searchPdtBase ">
+
+  <div class="recentSearches ion-margin-top">
+    <div class="flex-d justify-between">
+      <h6 class="ion-text-uppercase f-semibold">recent searches</h6>
+      <h6 class="">
+        <a href="/search" class="themeClr ion-text-uppercase gethelp f-semibold">edit</a>
+      </h6>
+    </div>
+
+    <ion-slides [options]="recentSearchOpt" pager="false" class="recentSearchSliderBase ion-margin-top">
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/ban3.jpg" class="recentImg">
+          <p class="ion-no-margin c-black">kurta</p>
+
+        </div>
+      </ion-slide>
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/bbb.png" class="recentImg">
+          <p class="ion-no-margin c-black">watch</p>
+
+
+        </div>
+      </ion-slide>
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/bantwo.webp" class="recentImg">
+          <p class="ion-no-margin c-black">jeans</p>
+
+        </div>
+      </ion-slide>
+
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/banbag.webp " class="recentImg">
+          <p class="ion-no-margin c-black">sling bag</p>
+
+        </div>
+      </ion-slide>
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/ban3.jpg" class="recentImg">
+          <p class="ion-no-margin c-black">kurta</p>
+
+        </div>
+      </ion-slide>
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/ban3.jpg" class="recentImg">
+          <p class="ion-no-margin c-black">kurta</p>
+
+        </div>
+      </ion-slide>
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/ban3.jpg" class="recentImg">
+          <p class="ion-no-margin c-black">kurta</p>
+
+        </div>
+      </ion-slide>
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/ban3.jpg" class="recentImg">
+          <p class="ion-no-margin c-black">kurta</p>
+
+        </div>
+      </ion-slide>
+      <ion-slide class="recentSearchSlides">
+        <div class="ion-text-center">
+          <img src="../../assets/images/home/ban3.jpg" class="recentImg">
+          <p class="ion-no-margin c-black">kurta</p>
+
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="add ion-margin-top">
+    <ion-img src="../../../../assets/images/wishlist/add.png"></ion-img>
+  </div>
+ 
+
+  <!-- looking -->
+  <div class="trendingBase ion-margin-top ion-padding-start ">
+
+    <div class="flex-d justify-between slidetitle">
+      <h6 class="c-black f-bold ion-text-uppercase ">looking for kurta sets</h6>
+
+    </div>
+
+    <ion-slides [options]="trendingOpt" pager="false" class="trendingSlideBase ">
+
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set3.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set5.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set6.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set4.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set6.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set5.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set4.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set3.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+
+  <!-- continue browsing brands -->
+
+  <div class="browsingBase ion-margin-top ion-padding-start ">
+
+    <div class="flex-d justify-between slidetitle">
+      <h6 class="c-black f-bold ion-text-uppercase ">continue browsing these brands</h6>
+
+    </div>
+
+    <ion-slides [options]="browsingOptbrand" pager="false" class="browsingSlidesBase ">
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold  brandName ">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+
+    </ion-slides>
+  </div>
+
+  <!-- continue browsing styles -->
+  <div class="browsingBase ion-margin-top ion-padding-start ">
+
+    <div class="flex-d justify-between slidetitle">
+      <h6 class="c-black f-bold ion-text-uppercase ">continue browsing these styles</h6>
+
+    </div>
+
+    <ion-slides [options]="browsingOptstyles" pager="false" class="browsingSlidesBase ">
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold  brandName ">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+
+    </ion-slides>
+  </div>
+
+  <!-- recommendation -->
+  <div class="trendingBase ion-margin-top ion-margin-bottom  ion-padding-start ">
+
+    <div class="flex-d justify-between slidetitle">
+      <h6 class="c-black f-bold ion-text-uppercase ">check out our reommendation for <br> jackets!</h6>
+
+    </div>
+
+    <ion-slides [options]="trendingOpt" pager="false" class="trendingSlideBase ">
+
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set3.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set5.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set6.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set4.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set6.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set5.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set4.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set3.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="trendingSlides">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              kushal k
+            </p>
+            <p class="itemDescription ion-text-capitalize ion-no-margin">
+              ethnic dresses
+            </p>
+            <p class="itemRate ion-no-margin c-black "><span class="strike">599</span>399<span
+                class="offer ion-text-uppercase">72%off</span></p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+</ion-content>

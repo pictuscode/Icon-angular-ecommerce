@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="dark" class="f-semibold ion-text-capitalize womenCatTitle">
+      {{getTitle}}
+    </ion-title>
+    <ion-icon name="search" slot="end" class="f-semibold ion-padding-end appbarIcons">
+
+    </ion-icon>
+    <ion-icon name="notifications" slot="end" class="f-semibold ion-padding-end appbarIcons">
+
+    </ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="itemsListBase">
+  <ng-container *ngFor="let item of pdtList">
+    <ion-row>
+      <ion-col size-xl="6" size-lg="6" size-md="6" size-sm="6" size-xs="6" class="itemsInner cardLeft"
+        *ngFor="let list of item;">
+
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding" (click)="(pdtDetails(list._id))">
+           
+            <img src={{pdtDir+list.productImage[0]}} class="itemImg"> 
+            <div class="rating flex-d" *ngIf="list.totalReview !=0">
+              <p>{{list.average}} <span>
+                  <ion-icon name="star" class="star"></ion-icon>
+                </span></p>
+              <p class='views'>{{nFormatter(list.totalReview,1)}}</p>
+
+            </div>
+
+          </ion-card-content>
+          <div class="itemDetails">
+
+            <div class="flex-d justify-between detInner">
+              <p class="brandName ion-no-margin f-bold" (click)="(pdtDetails(list._id))">
+                {{list.brandId.name}}
+
+              </p>
+
+              <div>
+                <img src={{imageSrc}} data-WishStatus="emptyWish" class='wishImg'>
+
+              </div>
+
+            </div>
+
+            <p class="itemDescription ion-text-caNpitalize ion-no-margin" (click)="(pdtDetails(list._id))">
+              {{list.productName}}
+            </p>
+            <p class="itemRate ion-no-margin c-black f-bold" (click)="(pdtDetails(list._id))">
+              <span *ngIf="list.discount==0 else discount"> {{ list.price }}</span>
+              <ng-template #discount>
+                <span class="strike ">₹ {{list.mrpPrice}}</span>₹ {{list.price}}
+              </ng-template>
+              <span class="offer ion-text-uppercase">{{list.discount}}% off</span>
+            </p>
+
+          </div>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ng-container>
+</ion-content>

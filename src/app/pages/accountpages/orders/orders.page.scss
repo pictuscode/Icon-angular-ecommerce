@@ -1,0 +1,97 @@
+.ordersHeader {
+    box-shadow: 0px 0px 3px #ccc;
+    ion-title {
+        font-size: 16px;
+    }
+}
+
+
+//order-content
+.orderInner2 {
+    background: #f5f5f5;
+    .insiderBase {
+        background: url(../../../../assets/images/accnt/orders/insider-bg.webp) no-repeat 95% 40%;
+    }
+    .myntraInsider {
+        padding-bottom: 10px;
+        h5 {
+            font-size: 12px;
+            margin: 13px 0 0 0;
+        }
+        p {
+            font-size: 10px;
+            margin: 3px 0 0 0;
+        }
+    }
+    .enrollBtn {
+        margin: 10px 0 0 0;
+        --box-shadow: none;
+        font-size: 10px;
+    }
+    //search-order
+    .searchOrderBase {
+        background: #fff;
+        padding: 8px 8px 8px 8px;
+        .searchOrders {
+            border: 1px solid #d6d6ea;
+            --box-shadow: none;
+            padding: 0;
+            color: #000000;
+            font-size: 12px;
+            --background: url(../../../../assets/images/accnt/orders/search.png) no-repeat 3% 39%;
+            --padding-start: 29px;
+            background-size: 18px;
+            .searchbar-input {
+                padding: 0;
+            }
+        }
+        .filterBtn {
+            border: 1px solid #d6d6ea;
+            --box-shadow: none;
+            font-size: 8px;
+            p {
+                margin-left: 3px;
+                font-size: 13px;
+            }
+        }
+        
+    }
+
+    //order-list
+    .orderList {
+        display: block;
+       
+        ion-card {
+            box-shadow: none;
+        }
+        ion-card-content {
+            padding: 10px 10px 10px 10px;
+        }
+        .cancelledIcon {
+            background: #d4d5d9;
+            border-radius: 50%;
+            padding: 4px 4px 4px 4px;
+            width: 18px;
+            height: 18px;
+        }
+        h6 {
+            font-size: 12px;
+        }
+        p {
+            font-size: 12px;
+        }
+        .orderDetails {
+            background: url(../../../../assets/images/angleRight.png) no-repeat 95% 48%;
+            background-color: #f5f5f5;
+
+            .orderedImg {
+                width: 50px;
+                min-height: 80px;
+                object-fit: cover;
+            }
+            .detailInner {
+                padding: 10px 10px 0px 10px;
+            }
+        }
+    }
+}

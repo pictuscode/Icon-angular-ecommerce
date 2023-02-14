@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/account"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="referBase">
+  <ion-grid *ngIf="!yourReferral">
+
+    <div >
+
+
+      <div class="ion-text-start">
+        <h5 class="f-bold">Invite your friends to shop on Myntra
+        </h5>
+
+      </div>
+
+      <ion-row>
+        <ion-col class='bannerBase'>
+          <div class="bannerImgBase">
+            <ion-row class="bannerCaption">
+              <ion-text color="light" class="ion-text-center">
+                <h6 class=" ion-no-margin">
+                  Refer a friend & get
+                </h6>
+                <h5 class=" ion-no-margin">
+                  ₹200 Myncash Off
+                </h5>
+                <h6 class=" ion-no-margin">
+                  on your next purchase!
+                </h6>
+                <p class="f-regular ion-margin-top">*₹1 myncash =1 off on your next order</p>
+              </ion-text>
+            </ion-row>
+          </div>
+          <div class="ion-text-center">
+            <p class="referraltext ">When your friends sign up using the referral code,
+              They get ₹<strong class="dark">100</strong>.You get ₹<strong class="dark">200</strong></p>
+
+            <p class="referraltext">Send inivte with referral code and look good together</p>
+          </div>
+          <ion-button expand="block" class="ion-text-lowercase   referralcodeBtn ">
+            grq7tp
+          </ion-button>
+          <ion-button expand="block" color="secondarythemecolor" class="ion-text-uppercase inviteBtn loginBtn">send
+            invite
+          </ion-button>
+
+          <ion-text color="secondarythemecolor" class="ion-text-center" (click)="yourReferral = !yourReferral">
+            <p class="ion-text-uppercase f-bold yourReferrals">Your referrals &nbsp; ></p>
+          </ion-text>
+        </ion-col>
+
+
+      </ion-row>
+    </div>
+
+  </ion-grid>
+  <div *ngIf="yourReferral" class="yourReferralBase ion-text-center">
+    <div class="flex-d justify-center noReferrImgBase">
+
+      <ion-img src="../../../../assets/images/referCode.png" class="noReferralImg ion-text-center"></ion-img>
+    </div>
+
+    <h6 class="c-black f-bold">No referral rewards</h6>
+    <h6>you have not invited any of your friends yet</h6>
+
+  </div>
+</ion-content>

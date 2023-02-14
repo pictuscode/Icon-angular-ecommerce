@@ -1,0 +1,35 @@
+<div *ngIf="isBannerSlide else addBanner">
+  <ng-container *ngFor="let item of bannerName; let i = index;">
+    <ion-slides [options]="banneropts" pager="false" class="bannerSliderBase">
+      <ion-slide class="bannerSlides" *ngFor="let dt of item;">
+        <div class="ion-text-center">
+          <img src={{bannerDir+dt.image}} class="bannerSlideImg" (click)="(itemList(dt.generalCollectionId,dt.subcategoryId,''))">
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+
+  </ng-container>
+</div>
+
+<!-- addslider -->
+<ng-template #addBanner>
+
+  <div class="ion-margin-top">
+    <ng-container *ngFor="let item of bannerName;">
+      <ion-slides [options]="banneropts" pager="false" class="addSliderBase">
+
+        <ion-slide class="addslides" *ngFor="let add of images;">
+          <div class="ion-text-center">
+            <img src={{bannerDir+add.image}} class="addsliderimg" (click)="(itemList(add.generalCollectionId,add.subcategoryId,''))">
+
+          </div>
+        </ion-slide>
+
+
+
+      </ion-slides>
+    </ng-container>
+  </div>
+
+</ng-template>

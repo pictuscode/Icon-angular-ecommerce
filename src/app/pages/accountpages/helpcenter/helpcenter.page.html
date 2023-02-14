@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar class="align-center helptoolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/account"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-uppercase ion-no-padding helpBarHaed f-bold c-black">help center</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="helpBase">
+  <div >
+
+
+    <!-- helpcenter -->
+    <ion-row class="ion-padding">
+      <ion-col size-xl="8" size-lg="8" size-md="8" size-sm="8" size-xs="8">
+        <h4 class="f-bold c-black">Help Center</h4>
+        <p class="helptext">Please get in touch and we will be happy to help you</p>
+      </ion-col>
+      <ion-col size-xl="4" size-lg="4" size-md="4" size-sm="4" size-xs="4">
+        <ion-img src="../../../../assets/images/help.png"></ion-img>
+      </ion-col>
+
+    </ion-row>
+
+    <!-- needhelp -->
+    <ion-row class="ion-margin-top">
+      <ion-col>
+        <h6 class="ion-text-uppercase needhelp f-semibold ion-padding-start ion-padding-end c-black">need help with
+          recent
+          purchases?</h6>
+        <div class="ion-text-center ">
+          <p class="orderText ion-no-margin">There are no orders to show</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- queries -->
+    <ion-row class="ion-margin-top">
+      <ion-col>
+        <h6 class="ion-text-uppercase needhelp f-semibold ion-padding-start ion-padding-end c-black">
+          more queries related to your experience</h6>
+        <ion-list class="w-100 queryText ion-no-padding ">
+          <ion-item lines="full" class="items " >
+            <ion-label class="ion-text-capitalize f-semibold">
+              payment/refund
+            </ion-label>
+          </ion-item>
+          <ion-item lines="full" class="items ">
+            <ion-label class="ion-text-capitalize f-semibold">
+              offers,discounts,coupons
+            </ion-label>
+          </ion-item>
+          <ion-item lines="full" class="items">
+            <ion-label class="ion-text-capitalize f-semibold">
+              manage your account
+            </ion-label>
+          </ion-item>
+          <ion-item lines="none" class="items">
+            <ion-label class="ion-text-capitalize f-semibold">
+              other
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <!-- recentqueries -->
+    <ion-row class="ion-margin-top ion-margin-bottom">
+      <ion-col class="ion-padding-start ion-padding-end">
+        <h5 class="ion-text-capitalize recenthead f-semibold c-black ">
+          recent queries</h5>
+
+        <p class="recentqueries ion-no-margin">There are no recent queries raised in Last 30 Days.</p>
+
+        <!-- queriesBtn -->
+        <ion-button expand="block" fill="outline"
+          class="ion-text-uppercase f-bold   ion-margin-bottom logoutBtn oldqueryBtn ">
+          show older queries
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <div class="ion-text-center postalBase">
+
+      <p class="postaltext f-semibold">Want to reach us the oldway?</p>
+      <p class="ion-text-uppercase postaltext postalLink f-bold">postal address</p>
+    </div>
+  </div>
+
+</ion-content>

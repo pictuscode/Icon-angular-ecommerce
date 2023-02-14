@@ -1,17 +1,282 @@
-<ion-header [translucent]="true">
+<!-- header -->
+
+
+<ion-header class="wishlistHeader">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+    <div class="flex-d justify-between">
+      <div>
+
+        <ion-title color="dark" class="f-semibold ion-text-capitalize ion-no-padding wishlistTitle">
+          wishlist
+
+        </ion-title>
+        <p class="ion-no-margin">{{wishLength>'0'?wishLength:'0'}} items</p>
+      </div>
+      <!-- wish-content -->
+      <div class="flex-d ion-margin-end align-center">
+        <ion-icon name="trash" class="wishIcons ion-margin-end" (click)="deleteallwish()" color="dark"></ion-icon>
+        <ion-img src="../../assets/images/itemsPics/shopping-bag.png" class="wishIcons" routerLink="/cart"></ion-img>
+      </div>
+
+    </div>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="wishListBase">
+  <div *ngIf="wishLength <='1'  else addedWishList">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+
+    <div>
+
+      <!-- no wishlist -->
+
+      <div class="wishlistText ion-text-center flex-d align-center ion-no-margin">
+        <div>
+          <h4 class=" c-black f-bold">Your wishlist is empty</h4>
+          <h5 class="ion-no-margin">
+            Save items that you like in your wishlist.<br>
+
+            Review them anytime and easily move them to the bag.
+            <div class="ion-margin-top">
+              <ion-button fill="outline" class="ion-text-uppercase" color="secondarythemecolor f-bold shopBtn"
+                href="/main">
+                <p class="ion-no-margin">
+
+                  shop now
+                </p>
+              </ion-button>
+            </div>
+          </h5>
+        </div>
+
+      </div>
+
+      <!-- add -->
+
+      <div class="add ion-no-margin">
+        <img src="../../assets/images/wishlist/add.png">
+      </div>
+
+
+
+      <!-- popular -->
+
+      <div class="popularBase ion-margin-top  ">
+
+        <div class=" slidetitle ">
+          <p class="c-black f-bold ion-text-uppercase ion-padding-start ion-padding-top">popular on myntra</p>
+          <ion-row class="ion-margin-top">
+            <ion-list class="w-100 ion-no-padding">
+
+              <ion-item lines="full" class="items">
+                <ion-label class="flex-d align-center ">
+                  <ion-avatar>
+                    <ion-img src="../../assets/images/womenCategory/kurtaSets/set1.webp" class="popularImg"></ion-img>
+                  </ion-avatar>
+                  <div class="acntLabel">
+                    <h6 class="c-black ">Roadster</h6>
+
+                    <p>Tshirts</p>
+                  </div>
+                </ion-label>
+              </ion-item>
+
+              <ion-item lines="full" class="items">
+                <ion-label class="flex-d align-center ">
+                  <ion-avatar>
+                    <ion-img src="../../assets/images/womenCategory/kurtaSets/set6.webp" class="popularImg"></ion-img>
+                  </ion-avatar>
+                  <div class="acntLabel">
+                    <h6 class="c-black"> HRX</h6>
+
+
+                    <p>Tshirts</p>
+                  </div>
+                </ion-label>
+              </ion-item>
+              <ion-item lines="full" class="items">
+                <ion-label class="flex-d align-center">
+                  <ion-avatar>
+                    <ion-img src="../../assets/images/womenCategory/kurtaSets/set3.webp" class="popularImg"></ion-img>
+                  </ion-avatar>
+                  <div class="acntLabel">
+                    <h6 class="c-black">anouk</h6>
+
+                    <p>Kurtas</p>
+                  </div>
+                </ion-label>
+              </ion-item>
+              <ion-item lines="none" class="items">
+                <ion-label class="flex-d align-center">
+                  <ion-avatar>
+                    <ion-img src="../../assets/images/womenCategory/kurtaSets/set5.webp" class="popularImg"></ion-img>
+                  </ion-avatar>
+                  <div class="acntLabel">
+                    <h6 class="c-black"> W</h6>
+
+                    <p>Kurtas</p>
+                  </div>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-row>
+
+        </div>
+      </div>
+
+      <!-- continue browsing -->
+      <app-trending-slide-widget [isContinueBrowsing]="continueBrowsing"></app-trending-slide-widget>
+
+    </div>
+  </div>
+
+  <ng-template #addedWishList>
+
+    <!-- added-wish -->
+    <div>
+      <div class="addedWish">
+        <ion-toolbar>
+          <ion-segment value="all" scrollable="true" mode="ios" [(ngModel)]="segmentModel"
+            (ionChange)="segmentChanged($event)" *ngFor="let tabname of tabWishlist">
+
+            <ion-segment-button value="all">
+              <ion-label>All</ion-label>
+            </ion-segment-button>
+
+
+            <ion-segment-button value={{name.string.subcategoryName}} *ngFor="let name of tabname">
+              <ion-label>{{name.string.subcategoryName}}</ion-label>
+            </ion-segment-button>
+
+
+          </ion-segment>
+        </ion-toolbar>
+
+        <ion-grid>
+
+          <!-- all -->
+          <div *ngFor="let wish of allWishlist">
+
+            <ion-row *ngIf="segmentModel === 'all'" class="">
+              <ion-col size-xl="6" size-lg="6" size-md="6" size-sm="6" size-xs="6" class="wishedItems"
+                *ngFor="let all of wish ; let inx = index">
+                <ion-card class="ion-no-margin itemsCard">
+                  <ion-card-content class="ion-no-padding">
+                    <img src={{productDir+all.productImage[0]}} class="itemImg">
+                    <div class="closeItem">
+                      <ion-icon name="close" (click)="closeWish(all._id,inx,1)"></ion-icon>
+                    </div>
+
+                    <div class="rating flex-d" *ngIf="all.totalReview !=0">
+                      <p class="ion-no-margin">{{all.average}} <span>
+                          <ion-icon name="star" class="star"></ion-icon>
+                        </span></p>
+                      <p class='views ion-no-margin'>{{nFormatter(all.totalReview,1)}}</p>
+
+                    </div>
+                  </ion-card-content>
+                  <div class="itemDetails ion-text-start">
+                    <p class="brandName f-bold c-black ion-no-margin ion-text-capitalize mb-0">
+                      {{all.productName}}
+                    </p>
+
+                    <p class="itemRate ion-no-margin c-black f-bold">
+                      <span *ngIf="all.discount==0 else discount">
+                        ₹ {{ all.price }}
+                      </span>
+                      <ng-template #discount>
+                        ₹ {{all.price}}
+                        <span class="strike ">₹ {{all.mrpPrice}}</span>
+                        <span class="offer ion-text-uppercase">({{all.discount}}%off)</span>
+                      </ng-template>
+                    </p>
+                  </div>
+
+                  <ion-text class="ion-text-center ">
+                    <p class="moveBagBtn">
+                      <a class="ion-text-uppercase themeClr f-bold ion-no-margin ">move to bag</a>
+                    </p>
+                  </ion-text>
+
+                </ion-card>
+              </ion-col>
+
+              <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="12" size-xs="12" class="">
+                <div class="slogan ion-text-center">
+                  <p class="ion-no-margin"><i>"I don't know who invented high heels,but all women owe him a lot".</i>
+                  </p>
+                  <h6 class="ion-no-margin">Marilyn Monroe</h6>
+                </div>
+              </ion-col>
+            </ion-row>
+
+          </div>
+
+          <!-- tabs -->
+
+          <div *ngFor="let tabWish of tabWishlist">
+            <div *ngFor="let tabs of tabWish">
+              <ion-row class="" *ngIf="segmentModel === tabs.string.subcategoryName">
+                <ion-col size-xl="6" size-lg="6" size-md="6" size-sm="6" size-xs="6" class="wishedItems"
+                  *ngFor="let aa of tabs.wishlist; let i = index">
+                  <ion-card class="ion-no-margin itemsCard">
+                    <ion-card-content class="ion-no-padding">
+                      <img [src]="productDir+aa.productImage[0] " class="itemImg">
+                      <div class="closeItem">
+                        <ion-icon name="close" (click)="closeWish(aa._id,i,2)"></ion-icon>
+                      </div>
+                      <div class="rating flex-d" *ngIf="aa.totalReview !=0">
+                        <p class="ion-no-margin">{{aa.average}} <span>
+                            <ion-icon name="star" class="star"></ion-icon>
+                          </span></p>
+                        <p class='views ion-no-margin'>{{nFormatter(aa.totalReview,1)}}</p>
+                      </div>
+                    </ion-card-content>
+                    <div class="itemDetails ion-text-start">
+                      <p class="brandName ion-no-margin ion-text-capitalize">
+                        {{aa.productName}}
+                      </p>
+                      <p class="itemRate ion-no-margin c-black f-bold">
+                        <span *ngIf="aa.discount==0 else discount">
+                          ₹ {{ aa.price }}
+                        </span>
+                        <ng-template #discount>
+                          ₹ {{aa.price}}
+                          <span class="strike "> ₹ {{aa.mrpPrice}}</span>
+                          <span class="offer ion-text-uppercase">({{aa.discount}}%off)</span>
+                        </ng-template>
+
+                      </p>
+                    </div>
+                    <ion-text class="ion-text-center ">
+                      <p class="moveBagBtn">
+                        <a class="ion-text-uppercase themeClr f-bold ion-no-margin ">move to bag</a>
+                      </p>
+                    </ion-text>
+
+                  </ion-card>
+                </ion-col>
+
+                <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="12" size-xs="12" class="">
+                  <div class="slogan ion-text-center">
+                    <p class="ion-no-margin"><i>"I don't know who invented high heels,but all women owe him a lot".</i>
+                    </p>
+                    <h6 class="ion-no-margin">Marilyn Monroe</h6>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+
+        </ion-grid>
+
+
+      </div>
+    </div>
+  </ng-template>
 </ion-content>

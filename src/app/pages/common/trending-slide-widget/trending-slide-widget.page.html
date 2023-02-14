@@ -1,0 +1,126 @@
+<!-- trending -->
+
+<div class="trendingBase ion-margin-top ion-padding-start " *ngIf="isTrendingSlide else continueBrowsing">
+
+  <div class="flex-d justify-between slidetitle">
+    <p class="c-black f-bold ion-text-uppercase ">trending on myntra</p>
+
+  </div>
+
+  <ng-container *ngFor="let item of trends; let i = index;">
+    <ion-slides [options]="trendingOpt" pager="false" class="trendingSlideBase ">
+      <ion-slide class="trendingSlides" *ngFor="let ts of item;">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src={{ts.thumbnail}} class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-start">
+            <p class="brandName ion-no-margin ">
+              {{ts.name}}
+            </p>
+          </div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ng-container>
+
+
+</div>
+
+
+<!-- continue browsing -->
+<ng-template #continueBrowsing>
+  <div class="browsingBase ion-margin-top ion-padding-start " *ngIf="isContinueBrowsing">
+
+    <div class="flex-d justify-between slidetitle">
+      <p class="c-black f-bold ion-text-uppercase ion-padding-top ">continue browsing these styles</p>
+
+    </div>
+
+    <ion-slides [options]="browsingOpt" pager="false" class="browsingSlidesBase ">
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold  brandName ">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide class="browsingSlides justify-start">
+        <ion-card class="ion-no-margin itemsCard">
+          <ion-card-content class="ion-no-padding">
+            <img src="../../../../assets/images/womenCategory//kurtaSets/set1.webp" class="itemImg">
+          </ion-card-content>
+          <div class="itemDetails ion-text-center">
+            <p class="ion-text-uppercase  f-bold brandName">
+              pink
+            </p>
+            <p class="ion-text-uppercase catname">kurt sets</p>
+          </div>
+        </ion-card>
+      </ion-slide>
+
+
+    </ion-slides>
+  </div>
+</ng-template>

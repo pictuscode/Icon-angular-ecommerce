@@ -1,0 +1,48 @@
+<ion-header class="notificationHeader">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="resetPasswordBase otpBase">
+  <ion-grid>
+    <h5 class="f-bold c-black">Verify with OTP</h5>
+    <p>Sent via SMS to 1234567890</p>
+
+    <div class="agreeText ">
+     
+      <ng-otp-input [ngStyle]="{'font-size': '12px','margin-right':'20px'}" (onInputChange)="onOtpChange($event)" [config]="config">
+      </ng-otp-input>
+  
+      <span *ngIf="otp" class="o-t-p"></span>
+    </div>
+
+
+    <h6 class="c-black agreeText ">
+      Did not receive OTP?
+      <span>
+        <a routerLink="#" class="themeClr f-bold  gethelp" >Resend OTP</a>
+      </span>
+
+    </h6>
+    <h6 class="c-black agreeText ">
+      Log in using
+      <span>
+        <a routerLink="#" class="themeClr f-bold  gethelp">Password</a>
+      </span>
+
+    </h6>
+
+    <h6 class="c-black agreeText ">
+      Having trouble logging in ?
+      <span>
+        <a routerLink="#" class="themeClr f-bold  gethelp">Get help</a>
+      </span>
+
+    </h6>
+
+  </ion-grid>
+
+</ion-content>

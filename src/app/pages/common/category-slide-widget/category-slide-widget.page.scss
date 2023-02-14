@@ -1,0 +1,81 @@
+//category
+.catTitle {
+    padding: 7px 10px 0;
+    font-size: 15px;
+}
+.categorySlideBase {
+    padding: 0px 10px;
+    .categorySlides {
+        width: 238.5px !important;
+
+        ion-card {
+            box-shadow: none;
+            border-radius: 0px;
+
+            min-height: 285px;
+            margin: 10px 7px 0 0;
+
+            h4 {
+                margin: 0px !important;
+                font-size: 16px !important;
+            }
+        }
+
+        .categoryImg {
+            min-height: 344px;
+            object-fit: cover;
+        }
+        .brand {
+            position: absolute;
+            bottom: 9%;
+            width: 168px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            img {
+                max-height: 27px;
+            }
+        }
+        .featurebrand {
+            position: absolute;
+            bottom: 2%;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            img {
+                width: 212px;
+                height: 68px;
+                object-fit: fill;
+            }
+        }
+        .cardText {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff6ed;
+            min-height: 50px;
+        }
+        .cardText2 {
+            min-height: 50px;
+        }
+
+        .bestcardbg {
+            --background: url(../../../../assets/images/gradientbg-home.jpg) no-repeat;
+            --background-size: 10px;
+
+            img {
+                padding: 10px 10px;
+            }
+        }
+    }
+}
+.dynamicSlide {
+    .titleimg {
+        height: 45px;
+        object-fit: cover;
+    }
+}

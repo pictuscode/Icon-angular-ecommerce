@@ -1,0 +1,70 @@
+.acntBar {
+    ion-title {
+        font: 15px SpartanSemiBold !important;
+        color: #7e8189;
+    }
+}
+
+.acntbase {
+    --background: #f5f5f5;
+    position: relative;
+    z-index: -1;
+    .cropImg {
+        --background: #545766;
+        position: relative;
+        z-index: -0;
+        width: 100%;
+        min-height: 200px;
+        margin: 0;
+    }
+    .profileupload {
+        background: #fff;
+        border-radius: 3px;
+        position: absolute;
+        width: 127px;
+        top: -63%;
+        left: 13%;
+        z-index: 1;
+        padding: 35px 24px 17px 30px;
+        box-shadow: 0 0 2px 0 var(--ion-color-medium);
+    }
+    .loginBtnBase {
+        background: #fff;
+        padding-bottom: 20px;
+      
+    }
+    .insider{
+        font-size:12px;
+    }
+    .items {
+        --background: url(../../assets/images/angleRight.png) no-repeat 97% 40%;
+
+        --background-size: 10px;
+
+        .acnticons {
+            width: 23px;
+        }
+        .acntLabel {
+            margin-left: 15px;
+            font: 14px SpartanSemiBold !important;
+            h6{
+                font: 14px SpartanSemiBold !important;   
+            }
+            p {
+                font-size: 12px !important;
+                color: #b3b4b7;
+            }
+        }
+    }
+    .companyAbt {
+        ion-item {
+            --inner-padding-start: 35px;
+        }
+        ion-label {
+            color: #7e8189;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+    }
+ 
+}

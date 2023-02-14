@@ -1,0 +1,435 @@
+<ion-content class="productDetailsBase">
+  <!-- slider -->
+  <div class="productImagesBase">
+
+    <div class="productOptTop flex-d justify-between w-100">
+      <ion-buttons slot="start" class="pdticons3">
+        <ion-back-button defaultHref="/" color="dark"></ion-back-button>
+      </ion-buttons>
+      <div class="productIcons flex-d">
+        <ion-img src="../../../../assets/images/itemsPics/share.png" class="pdticons"></ion-img>
+        <ion-img src="../../../../assets/images/itemsPics/heart.png" class="pdticons2"
+          (click)="(navigateWishList())"></ion-img>
+        <ion-img src="../../../../assets/images/itemsPics/shopping-bag.png" class="pdticons"
+          (click)="(navigateBag())"></ion-img>
+      </div>
+    </div>
+
+    <div class="productOptBottom flex-d justify-between w-100">
+
+      <ion-img src="../../../../assets/images/itemsPics/viewSimilar.png" class="pdticons ion-margin-start"></ion-img>
+
+      <div class="rating flex-d ion-margin-end align-center" *ngIf="pdtTotalReview != '0' ">
+        <p class="f-bold ion-no-margin"> {{pdtAvg}} <span>
+            <ion-icon name="star" class="star"></ion-icon>
+          </span></p>
+        <p class='views f-bold ion-no-margin'>{{nFormatter(pdtTotalReview,1)}}</p>
+
+      </div>
+    </div>
+
+    <ng-container>
+      <ion-slides [options]="productOpts" pager="true" class="productImagesSlides">
+        <ion-slide class="productSlides" *ngFor="let img of pdtInfo['productImage']">
+          <div class="ion-text-center">
+            <img src={{pdtInfoDir+img}} class="productImages ">
+          </div>
+        </ion-slide>
+      </ion-slides>
+    </ng-container>
+
+  </div>
+  <!-- Description -->
+  <div class="productDescription ">
+    <p class="brandName ion-no-margin f-bold ion-text-capitalize ">
+      {{pdtTitle}}
+    </p>
+    <p class="itemDescription ion-text-capitalize ion-no-margin">
+      {{pdtName}}
+    </p>
+    <p class="itemRate ion-no-margin c-black f-bold">
+      <span *ngIf="pdtDiscount == '0' else discount"> {{ pdtPrice }}</span>
+      <ng-template #discount>
+        <span class="strike ">₹ {{pdtMRP}}</span>₹ {{pdtPrice}}
+      </ng-template>
+      <span class="offer ion-text-uppercase">{{pdtDiscount}}% off</span>
+    </p>
+    <p class="tax ion-no-margin f-bold">
+      {{inclusiveTaxes ? " inclusive of all taxes" : ""}}
+    </p>
+  </div>
+
+  <!-- buy -->
+  <div class="buyFor ion-margin-top">
+    <div class="flex-d justify-between">
+      <h5 class=" f-bold">Buy for <span class="offer f-bold ion-no-margin">₹ 1,329</span></h5>
+      <h5 class=" f-bold star">Save 200</h5>
+
+    </div>
+    <p class="ion-no-margin ">Use at checkout</p>
+    <div class="flex-d justify-between align-center ">
+      <div>
+
+        <p class="ion-no-margin ">Orders abive Rs.599(only on first purchase) </p>
+      </div>
+      <div>
+      
+      </div>
+
+    </div>
+   
+  </div>
+
+  <!-- sizechart -->
+  <div class="sizeChartBase ion-margin-top">
+    <div class="flex-d justify-between ion-padding-top">
+      <p class="f-bold ion-no-margin">Select Size</p>
+
+    </div>
+
+
+    <div class="sizeListBase flex-d " *ngFor=" let sizes of sizePdt">
+      <div class="radio-button ion-margin-end  " *ngFor="let name of sizes">
+
+        <div>
+
+          <input type="radio" id={{name.sizeId.title}} name="radios"
+            (click)="seeRate(name.sellerDetails,name.sizeId.title,size,name.sizeId._id)">
+          <label for={{name.sizeId.title}} class=" f-bold">&nbsp;{{name.sizeId.title}}</label>
+
+        </div>
+
+      </div>
+    </div>
+    <!--  size details -->
+    <div *ngIf="isOpen " class="rateClass sellBase">
+
+      <p class="itemRate ion-no-margin c-black f-bold">
+        <span *ngIf="dis==0 else discount">
+          ₹ {{sellPrice}}
+        </span>
+        <ng-template #discount>
+          ₹ {{sellPrice}}
+          <span class="strike ">₹ {{mrp}}</span>
+          <span class="offer ion-text-uppercase">({{dis}} %off)</span>
+        </ng-template>
+      </p>
+
+      <p class="seller ">Seller: <span class="themeClr f-bold">{{sell}} </span> </p>
+
+    </div>
+
+
+    <ion-row class="productbtnBase ion-margin-top">
+      <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="6" size-xs="6" class="wishBase">
+        <ion-button expand="full" class="ion-text-uppercase wishlistbtn ion-no-margin f-bold flex-d align-center"
+          color="lightbg" (click)="addTowishList()">
+
+          <ion-img src={{imageSrc}} class="pdtbtnicons"></ion-img>
+
+          <p class=""> {{wishTxt}}</p>
+
+        </ion-button>
+
+      </ion-col>
+
+      <ion-col size-xl="12" size-lg="12" size-md="12" size-sm="6" size-xs="6">
+        <ion-button expand="full" class="ion-text-uppercase addtobagbtn ion-no-margin f-bold"
+          color="secondarythemecolor" (click)="addToBag(pdtId) ">
+          <span>
+            <ion-img src="../../../../assets/images/itemsPics/shoppingWhite.png" class="pdtbtnicons"></ion-img>
+          </span>
+          <p class="">add to bag</p>
+
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+
+  </div>
+
+
+
+  <!-- pdtdetails -->
+  <div class="pdtDetails">
+    <ion-row>
+      <ng-container *ngFor="let item of specification">
+
+        <ion-list class="pdtDetailsList ">
+          <ion-item *ngFor="let spec of item">
+            <ion-label>
+              <h6 class="f-bold c-black">{{spec.specificationId.title}} </h6>
+              <p class="c-black">{{spec.text}} </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ng-container>
+
+    </ion-row>
+    <h5 class="c-black subTitle f-bold  m-0">Product Details</h5>
+    <p>{{pdtDescription}}</p>
+
+    <h5 class="c-black subTitle f-bold">Size & Fit</h5>
+
+    <p class="ion-no-margin" *ngFor="let size of sizeAndFit">{{size}}</p>
+
+    <h5 class="c-black subTitle f-bold">Material & Care</h5>
+    <p class="ion-no-margin" *ngFor="let material of mat">{{material}}</p>
+
+    <h5 class="c-black subTitle f-bold">{{completeLook ? 'completeLook':""}}</h5>
+    <p class="ion-no-margin">{{completeLook ? completeLook:""}}</p>
+
+
+
+  </div>
+
+
+  <ion-row class="ion-margin-top qualityCheck">
+    <ion-col size-xl="6" size-lg="6" size-md="6" size-sm="6" size-xs="6">
+      <div class="flex-d justify-center borderRight">
+        <div (click)="showMyActionSheet()">
+
+          <div class="flex-d justify-center">
+
+            <ion-img src="../../../../assets/images/itemsPics/original.png" class="qualityImg">
+
+            </ion-img>
+
+          </div>
+          <ion-text color="secondarythemecolor qualityText f-bold">
+
+            Genuine Product
+          </ion-text>
+        </div>
+      </div>
+
+    </ion-col>
+    <ion-col size-xl="6" size-lg="6" size-md="6" size-sm="6" size-xs="6">
+      <div class="flex-d justify-center">
+        <div (click)="showMyActionSheet()">
+          <div class="flex-d justify-center">
+            <ion-img src="../../../../assets/images/itemsPics/qualified.png" class="qualityImg2">
+
+            </ion-img>
+          </div>
+          <ion-text color="secondarythemecolor qualityText f-bold">
+
+            Quality Checked
+          </ion-text>
+        </div>
+      </div>
+
+    </ion-col>
+
+  </ion-row>
+
+  <div class="exchange ion-margin-vertical">
+    <h6 class="f-bold c-black">Easy 30 days returns and exchnages</h6>
+    <p>Choose to return or exchange for a different size(if available) within 30 days.</p>
+  </div>
+  <div class="review ion-margin-vertical">
+    <h6 class="f-bold c-black">Rating & Reviews</h6>
+    <ion-row>
+
+      <ion-col size-xl="4" size-lg="4" size-md="4" size-sm="4" size-xs="4"
+        class="ion-text-center borderRight flex-d align-center">
+        <div>
+          <h1 class="c-black  ion-no-margin">
+            {{pdtAvg}}
+            <span>
+              <ion-icon name="star" class="star"></ion-icon>
+            </span>
+          </h1>
+          <p class="ion-no-margin">{{pdtTotalReview}} verifed Buyers</p>
+        </div>
+
+      </ion-col>
+
+      <ion-col size-xl="8" size-lg="8" size-md="8" size-sm="8" size-xs="8">
+        <ul class="progressList ion-no-padding">
+          <li class="flex-d align-center">
+            <p>
+              5
+              <span>
+                <ion-icon name="star" color="medium"></ion-icon>
+              </span>
+
+            </p>
+            <ion-progress-bar color="progress" value={{progressPercent(fiveStar,pdtTotalReview)}} class="ratingProgess">
+            </ion-progress-bar>
+            <span>
+              <p>
+                {{fiveStar}}
+              </p>
+            </span>
+          </li>
+          <li class="flex-d align-center">
+            <p>
+              4
+              <span>
+                <ion-icon name="star" color="medium"></ion-icon>
+              </span>
+
+            </p>
+            <ion-progress-bar color="progress" value={{progressPercent(fourStar,pdtTotalReview)}} class="ratingProgess">
+            </ion-progress-bar>
+            <span>
+              <p>
+                {{fourStar}}
+              </p>
+            </span>
+          </li>
+          <li class="flex-d align-center">
+            <p>
+              3
+              <span>
+                <ion-icon name="star" color="medium"></ion-icon>
+              </span>
+
+            </p>
+            <ion-progress-bar color="tertiary" value={{progressPercent(threeStar,pdtTotalReview)}}
+              class="ratingProgess"></ion-progress-bar>
+            <span>
+              <p>
+                {{threeStar}}
+              </p>
+            </span>
+          </li>
+          <li class="flex-d align-center">
+            <p>
+              2
+              <span>
+                <ion-icon name="star" color="medium"></ion-icon>
+              </span>
+
+            </p>
+            <ion-progress-bar color="warning" value={{progressPercent(twoStar,pdtTotalReview)}} class="ratingProgess">
+            </ion-progress-bar>
+            <span>
+              <p>
+                {{twoStar}}
+              </p>
+            </span>
+          </li>
+          <li class="flex-d align-center">
+            <p>
+              1
+              <span>
+                <ion-icon name="star" color="medium"></ion-icon>
+              </span>
+
+            </p>
+            <ion-progress-bar color="danger" value={{progressPercent(oneStar,pdtTotalReview)}} class="ratingProgess">
+            </ion-progress-bar>
+            <span>
+              <p>
+                {{oneStar}}
+              </p>
+            </span>
+          </li>
+        </ul>
+      </ion-col>
+
+    </ion-row>
+  </div>
+
+  <!-- customers-said -->
+  <div class="customerSay review ion-margin-vertical">
+    <h6 class="f-bold c-black  ">What Customers Said</h6>
+
+    <!-- customer-review -->
+    <div class="customerReviewBase ion-margin-top">
+
+      <h5 class="cusrev f-bold c-black">Customer Photos ({{TotalReviewImage}}) </h5>
+
+      <ng-container *ngFor="let img of FirstFewReviewImage">
+
+        <div class="flex-d justify-between">
+          <ion-card class="ion-no-margin itemsCard" *ngFor="let pic of img">
+            <ion-card-content class="ion-no-padding">
+              <img src={{reviewsDir+pic}} class="photoImg">
+            </ion-card-content>
+
+          </ion-card>
+          <div *ngIf="TotalReviewImage > '3' ; ">
+
+            <ion-card class="ion-no-margin itemsCard">
+              <ion-card-content class="ion-no-padding">
+                <img src={{reviewsDir+FirstFewReviewImage[0][0]}} class="photoImg">
+              </ion-card-content>
+
+            </ion-card>
+          </div>
+        </div>
+
+
+
+      </ng-container>
+      <h5 class="cusrev f-bold c-black">Customer Reviews({{pdtTotalReview}}) </h5>
+
+      <ion-list>
+        <ion-item lines="full" class="ion-no-padding" *ngFor="let review of comments">
+          <div class="flex-d customerReviews">
+            <div class="flex-d  reviewrate">
+
+
+              <h4 class="ion-no-margin lightText">
+                {{review.star}}
+
+
+              </h4>
+              <ion-icon name="star" class="star"></ion-icon>
+
+
+            </div>
+            <div class="reviewContent">
+              <!-- <p class="ion-no-margin">{{review.comment}}
+              </p> -->
+              <p class="ion-no-margin">Excellent product!
+              </p>
+
+              <div class="">
+                <p class="ion-no-margin mb-0">{{review.fullName}} | <span>17 Aug,2020</span></p>
+                <div class="flex-d align-center">
+                  <div class="flex-d align-center">
+
+                    <ion-icon name="thumbs-up-sharp" class="thumbs"></ion-icon>
+                    <p class="ion-no-margin mb-0">48</p>
+                  </div>
+                  <div class="flex-d  align-center ion-margin-start">
+                    <ion-icon name="thumbs-down-sharp" class="thumbs"></ion-icon>
+                    <p class="ion-no-margin mb-0">13</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ion-item>
+
+
+      </ion-list>
+      <div *ngIf="comments.length > 3 ; ">
+        <a href="" class="themeClr f-bold viewAll gethelp">View all {{comments.length -3}} reviews</a>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+ <!--  <div class="moreInfo ion-margin-top">
+    <h6 class="f-bold c-black">More Information</h6>
+    <p>Produt Code:{{productCode}}</p>
+  </div> -->
+
+ <!--  <div class="ion-margin-top quote ion-text-center">
+    <i>"The joy of dressing is an art"</i>
+    <p>John Galliano</p>
+  </div> -->
+</ion-content>
